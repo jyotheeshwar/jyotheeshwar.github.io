@@ -30,8 +30,8 @@ This application uses Bootstrap CSS3, JQuery and other libraries included by the
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
     <div class="nav-bar">
-        <a href="expenditure_category.html">
-            <img class="back-button" src="images/go_back_button.png" href="expenditure_category.html"/>
+        <a href="groupedcharts.html">
+            <img class="back-button" src="images/go_back_button.png" href="groupedcharts.html"/>
         </a>
         <span class="title">Pocket Money</span>
         <a href="home.html">
@@ -39,19 +39,21 @@ This application uses Bootstrap CSS3, JQuery and other libraries included by the
         </a>
     </div>
     <div class="savings-plan-page">
-        <div class="money-saved">
-            <p class="money-saved-title">Money Saved</p>
-            <p class="money-saved-value">$3000</p>
-        </div>
-        <span class="description-text">Based on your profile we calculated based on your previous transaction history and Twitter data (show raw data too?), we recommend putting 10% of your transaction for the month into the following plan:</span>
+        <p class="total-saving-title">Total savings till date:</p>
+        <p class="total-amount">$3000</span>
+        <p class="description-text">Based on your <a href="profile_page.html">profile</a>  we recommend putting <input type="textbox" value="10" size="3" />% of your transaction value for the month into:</p>
         <div class="plan-selector">
-            <input type="radio" name="savings-selector" value="stocks">Invest in government bonds/stocks</input>
-            <input type="radio" name="savings-selector" value="bank">Invest in savings account</input>
-            <input type="radio" name="savings-selector" value="none">Invest at a later time</input>
+            <input type="radio" name="savings-selector" value="stocks"><span>Stocks</span></input><br>
+            <input type="radio" name="savings-selector" value="funds"><span>Mutual funds</span></input><br>
+            <input type="radio" name="savings-selector" value="gic"><span>GIC</span></input><br>
+            <input type="radio" name="savings-selector" value="cash" checked="checked"><span>Cash savings</span></input><br>
+            <input type="radio" name="savings-selector" value="none"><span>None</span></input><br>
         </div>
+        <p>Based on your profile, the tradeoff analytics by IBM Watson is:</p>
+        <img class="where-to-invest" src="images/where_to_invest.png"/>
         <div class="submit-plan">
             <button class="submit-plan-button" id="select-plan-button">Select Investment Plan</button>
-            <p class="disclaimer-text">You are not required to choose a investment plan. The percentage of money we recommend adding in addition to your purchases are based on information such as your age, gender, location in comparison to people who fit into the same category, and who are in the same pay scale. The percentage can be changed at any instant, and the previously invested money will continue to be treated in the same manner.</p>
+            <p class="disclaimer-text">Please contact your local branch or the toll-free number for more information. <br><br>You are not required to choose a investment plan. The percentage of money we recommend adding in addition to your purchases are based on information such as your age, gender, location in comparison to people who fit into the same category, and who are in the same pay scale. The percentage can be changed at any instant, and the previously invested money will continue to be treated in the same manner.</p>
         </div>
     </div>
 

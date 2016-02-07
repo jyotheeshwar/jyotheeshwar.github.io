@@ -20,3 +20,25 @@
 .x.axis path {
   display: none;
 }
+
+body {
+  font: 10px sans-serif;
+}
+
+.line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}
+
+.line2 {
+  fill: none;
+  stroke: green;
+  stroke-width: 1.5px;
+}
+
+.emoji-large{
+	width:35px;
+	height:35px;
+	margin:10px;
+}

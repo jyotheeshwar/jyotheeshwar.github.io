@@ -32,8 +32,8 @@ This application uses Bootstrap CSS3, JQuery and other libraries included by the
 
 
     <div class="nav-bar">
-        <a href="expenditure_category.html">
-            <img class="back-button" src="images/go_back_button.png" href="expenditure_category.html"/>
+        <a href="groupedcharts.html">
+            <img class="back-button" src="images/go_back_button.png" href="groupedcharts.html"/>
         </a>
         <span class="title">Expenditures</span>
         <a href="home.html">
@@ -41,7 +41,7 @@ This application uses Bootstrap CSS3, JQuery and other libraries included by the
         </a>
     </div>
     <div class="expenditure-list">
-        <ul>
+        <ul id="expenditurelist">
             <li>
                 <div class="expenditure-list-element color-code-title">
                     <div class="expenditure-category">
@@ -52,68 +52,10 @@ This application uses Bootstrap CSS3, JQuery and other libraries included by the
                     </div>
                 </div>
             </li>
-            <li>
-                <div class="expenditure-list-element color-code-healthcare">
-                    <div class="expenditure-category">
-                        <span>Healthcare</span>
-                    </div>
-                    <div class="expenditure-amount">
-                        <span>      300</span>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="expenditure-list-element color-code-food">
-                    <div class="expenditure-category">
-                        <span>Food and Beverage</span>
-                    </div>
-                    <div class="expenditure-amount">
-                        <span>  1400</span>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="expenditure-list-element color-code-entertainment">
-                    <div class="expenditure-category">
-                        <span>Entertainment</span>
-                    </div>
-                    <div class="expenditure-amount">
-                        <span>  400</span>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="expenditure-list-element color-code-groceries">
-                    <div class="expenditure-category">
-                        <span>Groceries</span>
-                    </div>
-                    <div class="expenditure-amount">
-                        <span>    700</span>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="expenditure-list-element color-code-transportation">
-                    <div class="expenditure-category">
-                        <span>Transportation</span>
-                    </div>
-                    <div class="expenditure-amount">
-                        <span>      180</span>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="expenditure-list-element color-code-others">
-                    <div class="expenditure-category">
-                        <span>Others</span>
-                    </div>
-                    <div class="expenditure-amount">
-                        <span>  2000</span>
-                    </div>
-                </div>
-            </li>
+            
+           
         </ul>
-        <p class="total-text">Total: 4980 </p>
+        <p class="total-text" id="total-expenditure" ></p>
     </div>
 
 
@@ -143,6 +85,7 @@ This application uses Bootstrap CSS3, JQuery and other libraries included by the
 
     <!-- build:js(.tmp) scripts/main.js -->
     <script src="scripts/main.js"></script>
+	<script src="scripts/expenditure.js"></script>
     <!-- endbuild -->
   </body>
 </html>

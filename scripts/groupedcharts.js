@@ -31,16 +31,29 @@ var svg = d3.select("#chart").append("svg")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 d3.csv("data.csv", function(error, data) {
+//$.getJSON("http://personality-insights-scotia.mybluemix.net/customer_json",function(data){
   if (error) throw error;
-
-  var ageNames = d3.keys(data[0]).filter(function(key) { return key !== "Category"; });
-
+  var barNames = d3.keys(data[0]).filter(function(key) { return key !== "Category"; });  
+  
+  var categoryNames = [];
+  var personal = [];
+  var demographics = [];
+  $.each( data, function( key, value ) {
+	  categoryNames.push(value.Categories)
+	  personal.push(value.Personal);
+	  demographics.push(value.Demographics);
+	});
+	
+	findPatient(categoryNames, personal, demographics);	
+	
   data.forEach(function(d) {
-    d.ages = ageNames.map(function(name) { return {name: name, value: +d[name]}; });
+    d.ages = barNames.map(function(name) { return {name: name, value: +d[name]}; });
   });
 
   x0.domain(data.map(function(d) { return d.Category; }));
-  x1.domain(ageNames).rangeRoundBands([0, x0.rangeBand()]);
+  
+  x1.domain(barNames).rangeRoundBands([0, x0.rangeBand()]);
+  
   y.domain([0, d3.max(data, function(d) { return d3.max(d.ages, function(d) { return d.value; }); })]);
 
   svg.append("g")
@@ -70,8 +83,9 @@ d3.csv("data.csv", function(error, data) {
         .attr("class","barstext")
         .attr("x", function(d) { return x1(d.name); })
         .attr("y",function(d) { return y(d.value); })
-        .text(function(d){console.log(d.value/1000000); 
-			return (d.value/1000000).toFixed(2);})
+        .text(function(d){ 
+			return '$'+ d.value;
+		})
 	  
   state.selectAll("rect")
       .data(function(d) { return d.ages; })
@@ -83,7 +97,7 @@ d3.csv("data.csv", function(error, data) {
       .style("fill", function(d) { return color(d.name); });
 
   var legend = svg.selectAll(".legend")
-      .data(ageNames.slice().reverse())
+      .data(barNames.slice().reverse())
     .enter().append("g")
       .attr("class", "legend")
       .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
@@ -102,3 +116,20 @@ d3.csv("data.csv", function(error, data) {
       .text(function(d) { return d; });
 
 });
+
+function findPatient(barNames, personal, demographics){
+	console.log("findingPatientCategory")
+	var diff = 0;
+	var patients = [];
+	
+	for(var index = 1; index<personal.length; index++){			
+		var newdiff = personal[index]-demographics[index];
+		if(newdiff>diff){
+			patients.push(index);
+			diff = newdiff;
+		}
+		
+	}
+	if(patients.length>0)
+	    d3.select('#risk-category').innerHTML= barNames[patients[0]];
+}

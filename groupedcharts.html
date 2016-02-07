@@ -23,57 +23,39 @@
     <!-- endbuild -->
     
   </head>
-  
-  <style>
-
-  body {
-    font: 10px sans-serif;
-  }
-
-  .axis path,
-  .axis line {
-    fill: none;
-    stroke: #000;
-    shape-rendering: crispEdges;
-  }
-
-  .bar {
-    fill: steelblue;
-  }
-
-  .x.axis path {
-    display: none;
-  }
-
-  </style>
   <body>
 	  <script src="https://d3js.org/d3.v3.min.js"></script>
     <!--[if lt IE 10]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    
-    <div class="container">
-      <div class="header">
-        <ul class="nav nav-pills pull-right">
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-        <h3 class="text-muted">ScotiabankHackIt</h3>
+    <div class="nav-bar">
+        <a href="home.html">
+            <img class="back-button" src="images/go_back_button.png" href="home.html"/>
+        </a>
+        <span class="title">Expenditures</span>
+        <a href="home.html">
+            <img class="home-button" src="images/home_icon.png" href="home.html"/>
+        </a>
+    </div>
+    <div class="charts">
+      <p class="title-message"><img class="emoji-large" src="images/whatsapp_emoji/Emoji Smiley/Emoji Smiley-41.png"/>Woohoo!!</p>
+      <p class="title-message">You're in the top 10% of people in your demographics.</p>
+		  <p class="secondary-message">You're on the straight and narrow, and will pay off your debts. Looks like you might even save a little!</p>
+	  
+		  <img id="graphs-png-image" class="graph-image" src="images/graph.png">
+		  <div class="alert alert-info" role="alert">
+        <h4>Seems like you spent alot more on Food<!--<span id="risk-category">< change this dynamically></span>-->
+			   than your peers. </h4>
+		  </div>
+
+      <p class="title-message">Your historical spending data</p>
+      <img class="graph-image history" id="graphs-history-image" src="images/history.png">
+      <div class="button-div">
+        <button class="expenditure-button"><a href="expenditure_list.html">Expenditure details</a></button>
+        <button class="savings-button"><a href="investment_plan.html">Your Savings</a></button>
       </div>
 
-      <div class="jumbotron">
-        <div id="chart"></div>
-      </div>
-
-      <div class="row marketing">
-       hullo
-      </div>
-
-      <div class="footer">
-        <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
-      </div>
     </div>
     
 
@@ -106,14 +88,5 @@
 	
     <!-- endbuild -->
 
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-    <script>
-      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-      e.src='https://www.google-analytics.com/analytics.js';
-      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-      ga('create','UA-XXXXX-X');ga('send','pageview');
-    </script>
   </body>
 </html>
