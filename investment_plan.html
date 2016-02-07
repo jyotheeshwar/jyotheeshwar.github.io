@@ -1,0 +1,86 @@
+<!-- 
+This application uses Bootstrap CSS3, JQuery and other libraries included by the Yeoman scaffolder under their respective licenses. This application has been made by and is the copyright work of Team Pocket Money, consisting of Alberto, Christina, Jyotheeswar, Shuiyao, Patricio and Tarunjit.
+-->
+<!doctype html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8">
+    <title>Home | Pocket Money</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+    <!-- build:js scripts/vendor/modernizr.js -->
+    <script src="/bower_components/modernizr/modernizr.js"></script>
+    <!-- endbuild -->
+    
+  </head>
+  <body>
+    <!--[if lt IE 10]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <div class="nav-bar">
+        <a href="expenditure_category.html">
+            <img class="back-button" src="images/go_back_button.png" href="expenditure_category.html"/>
+        </a>
+        <span class="title">Pocket Money</span>
+        <a href="home.html">
+            <img class="home-button" src="images/home_icon.png" href="home.html"/>
+        </a>
+    </div>
+    <div class="savings-plan-page">
+        <div class="money-saved">
+            <p class="money-saved-title">Money Saved</p>
+            <p class="money-saved-value">$3000</p>
+        </div>
+        <span class="description-text">Based on your profile we calculated based on your previous transaction history and Twitter data (show raw data too?), we recommend putting 10% of your transaction for the month into the following plan:</span>
+        <div class="plan-selector">
+            <input type="radio" name="savings-selector" value="stocks">Invest in government bonds/stocks</input>
+            <input type="radio" name="savings-selector" value="bank">Invest in savings account</input>
+            <input type="radio" name="savings-selector" value="none">Invest at a later time</input>
+        </div>
+        <div class="submit-plan">
+            <button class="submit-plan-button" id="select-plan-button">Select Investment Plan</button>
+            <p class="disclaimer-text">You are not required to choose a investment plan. The percentage of money we recommend adding in addition to your purchases are based on information such as your age, gender, location in comparison to people who fit into the same category, and who are in the same pay scale. The percentage can be changed at any instant, and the previously invested money will continue to be treated in the same manner.</p>
+        </div>
+    </div>
+
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    
+    <!-- build:js(.) scripts/plugins.js -->
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/affix.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/alert.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/dropdown.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tooltip.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/modal.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/transition.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/button.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/popover.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/carousel.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/scrollspy.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/collapse.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js"></script>
+    <!-- endbuild -->
+    
+
+    <!-- build:js(.tmp) scripts/main.js -->
+    <script src="scripts/main.js"></script>
+    <!-- endbuild -->
+  </body>
+</html>
